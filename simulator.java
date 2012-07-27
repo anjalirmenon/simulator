@@ -1,5 +1,5 @@
 import java.io.*;
-
+import java.io.File;
 public class simulator
 {
 	public static int pReg,iReg;
@@ -9,7 +9,11 @@ public class simulator
 	//public static boolean flag=true;
 	public static void main(String[] args)throws IOException
 	{
-		FileInputStream fstream = new FileInputStream("add.txt");
+		if(args.length != 1)
+		{
+			System.out.println("invalid commandline!");
+		}
+		FileInputStream fstream = new FileInputStream(args[0]);
                 DataInputStream in = new DataInputStream(fstream);
                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
                 String strline;
@@ -66,6 +70,7 @@ public class simulator
 		}
 		String ans;
 		ans=msg;
+	//	System.out.println(msg);
 		if(ans.charAt(0) == 'a' || ans.charAt(0) == 'A')
 		{
 			confirm=false;
