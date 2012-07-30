@@ -1,0 +1,4 @@
+go	ld#  r1,1
+	ld#  r2,2  
+	add  r1,r2
+done	hlt  00 
